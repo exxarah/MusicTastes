@@ -8,6 +8,36 @@ import os
 db = SQLAlchemy()
 
 
+def database_setup(app):
+    # Database Setup
+
+    from myspotify.auth.models import User
+
+    db.init_app(app)
+    db.create_all()
+
+
+def blueprints_setup(app):
+    from myspotify.general import general_bp
+    from myspotify.auth import auth_bp
+
+    # Blueprints Setup
+    app.register_blueprint(general_bp, url_prefix='/')
+    app.register_blueprint(auth_bp, url_prefix='/')
+
+
+def login_setup(app):
+    from myspotify.auth.models import User
+
+    login_manager = LoginManager()
+    login_manager.login_view = 'auth_bp.login'
+    login_manager.init_app(app)
+
+    @login_manager.user_loader
+    def load_user(user_id):
+        return User.query.get(int(user_id))
+
+
 def create_app(test_config=None):
     app = Flask(__name__, instance_relative_config=True)
     app.config.from_mapping(
@@ -29,27 +59,10 @@ def create_app(test_config=None):
         pass
 
     with app.app_context():
-        # Database Setup
 
-        from myspotify.auth.models import User
-
-        db.init_app(app)
-        db.create_all()
-
-        from myspotify.general import general_bp
-        from myspotify.auth import auth_bp
-
-        # Blueprints Setup
-        app.register_blueprint(general_bp, url_prefix='/')
-        app.register_blueprint(auth_bp, url_prefix='/')
-
-        login_manager = LoginManager()
-        login_manager.login_view = 'auth_bp.login'
-        login_manager.init_app(app)
-
-        @login_manager.user_loader
-        def load_user(user_id):
-            return User.query.get(int(user_id))
+        database_setup(app)
+        blueprints_setup(app)
+        login_setup(app)
 
         return app
 

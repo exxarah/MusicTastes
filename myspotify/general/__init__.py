@@ -7,3 +7,5 @@ general_bp = Blueprint(
     static_folder='static',
     static_url_path='/general/static/'
 )
+
+from . import views

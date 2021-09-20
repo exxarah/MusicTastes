@@ -1,0 +1,30 @@
+body * {
+    outline: black solid 2px;
+}
+
+html {
+    min-height: 100%;
+}
+
+body {
+    color: slategray;
+    height: 100%;
+    font-family: "Raleway", sans-serif;
+}
+
+.vertical-center {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+#content {
+    margin-top: 8vh;
+    margin-bottom: 5vh;
+    padding: 0px;
+    min-height: 87vh;
+}
+
+.flash-box {
+    background-color: coral;
+    color: #f5edda;
+}

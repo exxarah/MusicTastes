@@ -7,3 +7,5 @@ auth_bp = Blueprint(
     static_folder='static',
     static_url_path='/auth/static/'
 )
+
+from . import views
