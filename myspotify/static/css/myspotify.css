@@ -1,6 +1,8 @@
+/*
 body * {
     outline: black solid 2px;
 }
+*/
 
 html {
     min-height: 100%;
@@ -10,6 +12,19 @@ body {
     color: slategray;
     height: 100%;
     font-family: "Raleway", sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: slategray;
+}
+
+a:hover {
+    color: whitesmoke;
+}
+
+i.selected {
+    color: whitesmoke;
 }
 
 .vertical-center {
@@ -26,5 +41,5 @@ body {
 
 .flash-box {
     background-color: coral;
-    color: #f5edda;
+    color: whitesmoke;
 }
