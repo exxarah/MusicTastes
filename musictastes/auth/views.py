@@ -52,7 +52,7 @@ def login_post():
         return redirect(url_for('auth_bp.login'))
 
     login_user(user, remember=False)
-    return redirect(url_for('auth_bp.profile'))
+    return redirect(url_for('general_bp.index'))
 
 
 @auth_bp.route('/logout/')
@@ -60,9 +60,3 @@ def login_post():
 def logout():
     logout_user()
     return redirect(url_for('auth_bp.login'))
-
-
-@auth_bp.route('/profile/')
-@login_required
-def profile():
-    return render_template('profile.html', user=current_user)

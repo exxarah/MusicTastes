@@ -11,6 +11,7 @@ A javascript-based data visualisation for exploring your Spotify tastes. Uses sa
 - [Python 3 Reference](https://docs.python.org/3/)
 - [Spotify API Reference](https://developer.spotify.com/documentation/web-api/reference)
 - [Spotipy Python Spotify Wrapper](https://github.com/plamere/spotipy)
+- [OAuth Tutorial](https://realpython.com/flask-google-login/)
 
 ## Design Resources
 - [Spotify Design and Branding Guidelines](https://developer.spotify.com/documentation/general/design-and-branding/)

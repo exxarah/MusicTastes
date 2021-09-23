@@ -22,7 +22,9 @@
 - [ ] Website Housekeeping
   - [ ] Home Page
   - [ ] Login Page
+    - [ ] Instead of an actual page, make it a drop down from the user icon in the header
   - [ ] DataVis Page
+    - [ ] Is designed to disguise itself as the home page, for the appearance of a clean single page app
 
 ## Stretch Goals
 - [ ] Remember previous logins, so that we can try and get historical data despite the limit of 50 recent songs for the public API
