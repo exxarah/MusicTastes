@@ -1,4 +1,4 @@
-# MySpotify
+# MusicTastes
 
 ## Description
 
@@ -13,4 +13,4 @@ A javascript-based data visualisation for exploring your Spotify tastes. Uses sa
 - [Spotipy Python Spotify Wrapper](https://github.com/plamere/spotipy)
 
 ## Design Resources
-
+- [Spotify Design and Branding Guidelines](https://developer.spotify.com/documentation/general/design-and-branding/)

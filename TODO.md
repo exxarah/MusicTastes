@@ -1,4 +1,4 @@
-# MySpotify TODO
+# MusicTastes TODO
 
 ## Minimum Required
 
