@@ -11,15 +11,15 @@ db = SQLAlchemy()
 def database_setup(app):
     # Database Setup
 
-    from myspotify.auth.models import User
+    from spotifytastes.auth.models import User
 
     db.init_app(app)
     db.create_all()
 
 
 def blueprints_setup(app):
-    from myspotify.general import general_bp
-    from myspotify.auth import auth_bp
+    from spotifytastes.general import general_bp
+    from spotifytastes.auth import auth_bp
 
     # Blueprints Setup
     app.register_blueprint(general_bp, url_prefix='/')
@@ -27,7 +27,7 @@ def blueprints_setup(app):
 
 
 def login_setup(app):
-    from myspotify.auth.models import User
+    from spotifytastes.auth.models import User
 
     login_manager = LoginManager()
     login_manager.login_view = 'auth_bp.login'
@@ -42,7 +42,7 @@ def create_app(test_config=None):
     app = Flask(__name__, instance_relative_config=True)
     app.config.from_mapping(
         SECRET_KEY='dev',
-        DATABASE=os.path.join(app.instance_path, 'myspotify.sqlite')
+        DATABASE=os.path.join(app.instance_path, 'spotifytastes.sqlite')
     )
 
     if test_config is None:

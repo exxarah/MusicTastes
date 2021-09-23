@@ -1,7 +1,7 @@
 """ Data Models for User Functionality """
 import datetime
 from flask_login import UserMixin
-from myspotify import db
+from spotifytastes import db
 
 
 class User(UserMixin, db.Model):
