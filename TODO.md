@@ -8,7 +8,7 @@
   - [ ] Mockup Visualisation
   - [ ] General Website Design
 - [ ] Get Access to Data
-  - [ ] Spotify OAuth
+  - [X] Spotify OAuth
   - [ ] Get User's listened to tracks
     - [ ] Last 50
     - [ ] Saved Songs

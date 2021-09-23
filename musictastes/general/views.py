@@ -1,12 +1,44 @@
-from flask import render_template
-from flask_login import current_user
+import spotipy
+from flask import render_template, redirect, url_for, request
+
 from . import general_bp
+from musictastes import app
 
 
 @general_bp.route('/')
 def index():
-    print("Index loading")
-    if current_user.is_authenticated:
-        return render_template('vis.html')
-    else:
-        return render_template('index.html')
+    cache_handler = spotipy.cache_handler.CacheFileHandler(cache_path=app.config['SPOTIFY_CACHE'])
+    auth_manager = spotipy.oauth2.SpotifyOAuth(
+        scope='user-read-recently-played',
+        cache_handler=cache_handler,
+        show_dialog=True
+    )
+
+    if request.args.get("code"):
+        # Step 3: Redirected from spotify auth page
+        auth_manager.get_access_token(request.args.get("code"))
+        return redirect(url_for('general_bp.index'))
+
+    if not auth_manager.validate_token(cache_handler.get_cached_token()):
+        # Step 2: Display sign in link when no token
+        auth_url = auth_manager.get_authorize_url()
+        return render_template('index.html', auth_url=auth_url)
+
+    # Step 4: Signed in, display data
+    spotify = spotipy.Spotify(auth_manager=auth_manager)
+    print(f'Hi {spotify.me()["display_name"]}')
+
+    return redirect(url_for('general_bp.vis_page'))
+
+
+@general_bp.route('/vis/')
+def vis_page():
+    cache_handler = spotipy.cache_handler.CacheFileHandler(cache_path=app.config['SPOTIFY_CACHE'])
+    auth_manager = spotipy.oauth2.SpotifyOAuth(cache_handler=cache_handler)
+    if not auth_manager.validate_token(cache_handler.get_cached_token()):
+        return redirect('/')
+
+    spotify = spotipy.Spotify(auth_manager=auth_manager)
+    print(spotify.current_user_recently_played())
+
+    return render_template('vis.html')
