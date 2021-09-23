@@ -3,13 +3,13 @@
 <div class="container-fluid fixed-top">
 	<div id="header" class="row">
 		<div id="logo" class="col-12 col-md-2 vertical-center d-flex justify-content-center justify-content-md-start">
-			<i class="fas fa-music"></i> MySpotify
+			<i class="fas fa-music"></i> MusicTastes
 		</div>
 		<div id="navbar" class="col vertical-center d-flex">
 			<button><a href="{{ url_for('general_bp.index') }}">HOME</a></button>
 		</div>
 		<div id="user-info" class="col-md-2 vertical-center justify-content-end d-flex">
-			<button><a href=""><i class="fas fa-user"></i></a></button>
+			<button><a href="{{ url_for('auth_bp.profile') }}"><i class="fas fa-user"></i></a></button>
 		</div>
 	</div>
 </div>

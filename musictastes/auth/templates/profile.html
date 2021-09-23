@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block head %}
+	{{ super() }}
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/auth/profile.css') }}"/>
+{% endblock %}
+
+{% block title %}PROFILE{% endblock %}
+
+{% block content %}
+	Profile
+{% endblock %}

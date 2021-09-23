@@ -1,0 +1,18 @@
+#content {
+    position: relative;
+    height: 87vh;
+}
+
+#centered-box {
+    padding: 50px;
+}
+
+#centered-box > * {
+    width: 100%;
+}
+
+#big-logo {
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 20px;
+}

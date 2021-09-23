@@ -2,14 +2,17 @@
 from flask import Flask
 from flask_login import LoginManager
 from flask_sqlalchemy import SQLAlchemy
+from oauthlib.oauth2 import WebApplicationClient
 import os
 
-# Database Setup
-db = SQLAlchemy()
+# Setup
+global app, db, client
 
 
-def database_setup(app):
+def database_setup():
     # Database Setup
+    global db
+    db = SQLAlchemy()
 
     from musictastes.auth.models import User
 
@@ -17,7 +20,7 @@ def database_setup(app):
     db.create_all()
 
 
-def blueprints_setup(app):
+def blueprints_setup():
     from musictastes.general import general_bp
     from musictastes.auth import auth_bp
 
@@ -26,7 +29,7 @@ def blueprints_setup(app):
     app.register_blueprint(auth_bp, url_prefix='/')
 
 
-def login_setup(app):
+def login_setup():
     from musictastes.auth.models import User
 
     login_manager = LoginManager()
@@ -38,7 +41,13 @@ def login_setup(app):
         return User.query.get(int(user_id))
 
 
+def oauth_setup():
+    global client
+    client = WebApplicationClient(app.config['SPOTIFY_CLIENT_ID'])
+
+
 def create_app(test_config=None):
+    global app
     app = Flask(__name__, instance_relative_config=True)
     app.config.from_mapping(
         SECRET_KEY='dev',
@@ -60,9 +69,10 @@ def create_app(test_config=None):
 
     with app.app_context():
 
-        database_setup(app)
-        blueprints_setup(app)
-        login_setup(app)
+        database_setup()
+        blueprints_setup()
+        login_setup()
+        oauth_setup()
 
         return app
 
