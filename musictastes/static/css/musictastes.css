@@ -32,7 +32,7 @@ i.selected {
     margin-bottom: auto;
 }
 
-#content {
+#content, #drawer {
     margin-top: 8vh;
     margin-bottom: 5vh;
     padding: 0px;
@@ -67,4 +67,16 @@ i.selected {
     min-height: 100%;
     object-fit: cover;
     border-radius: 50%;
+}
+
+/* The side navigation menu */
+#drawer {
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #EEEEEE; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
 }

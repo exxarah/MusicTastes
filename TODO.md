@@ -19,6 +19,7 @@
 - [ ] Present Data
   - [ ] Actual data visualisation stuff
   - [ ] Click on the song entry to get song metadata
+    - [X] Drawer that opens on the side of the page with song information
 - [ ] Website Housekeeping
   - [ ] Home Page
   - [ ] ~~Login~~ User Page

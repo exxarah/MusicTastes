@@ -4,6 +4,39 @@
 
 {% block content %}
 
-	Hello World!
+	<button type="button" id="menuButton" onclick="openDrawer();">Open Drawer</button>
 
+	<div id="drawer" tabindex="-1" aria-disabled="true">
+		Stuff in drawer
+	</div>
+{% endblock %}
+
+{% block script %}
+<script type="text/javascript">
+
+	function openDrawer() {
+		const drawer = document.querySelector("#drawer");
+		console.log('opening')
+
+		drawer.style.width = "500px";
+	}
+
+	function closeDrawer() {
+		const drawer = document.querySelector("#drawer");
+		console.log("closing")
+
+		drawer.style.width = "0px"
+	}
+
+	window.addEventListener('mouseup',function(event){
+		const drawer = document.querySelector("#drawer");
+		console.log('mouseup')
+		if(event.target != drawer && event.target.parentNode != drawer){
+			 closeDrawer();
+		}
+	});
+
+	closeDrawer();
+
+</script>
 {% endblock %}
