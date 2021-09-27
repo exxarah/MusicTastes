@@ -8,6 +8,7 @@
 		<div id="navbar" class="col vertical-center d-flex">
 			<button><a href="{{ url_for('general_bp.index') }}">HOME</a></button>
 		</div>
+		{% if logged_in == True %}
 		<div id="user-info" class="col-md-2 vertical-center justify-content-end d-flex">
 			<button type="button" class="btn dropdown-toggle" id="user-profile" data-toggle="dropdown"><i class="fas fa-user"></i></button>    <!-- This should have a dropdown of user info -->
 			<div class="dropdown-menu p-4 text-muted" aria-labelledby="user-profile" style="width: 300px;">
@@ -29,5 +30,6 @@
 				</div>
 			</div>
 		</div>
+		{% endif %}
 	</div>
 </div>

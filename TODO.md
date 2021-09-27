@@ -21,11 +21,12 @@
   - [ ] Click on the song entry to get song metadata
 - [ ] Website Housekeeping
   - [ ] Home Page
-  - [ ] Login Page
-    - [ ] ~~Instead of an actual page, make it a drop down from the user icon in the header~~
+  - [ ] ~~Login~~ User Page
+    - [X] Instead of an actual page, make it a drop down from the user icon in the header
+    - [X] Login is handled separately (for the most part)
     - [X] User Profile dropdown
     - [ ] Make OAuth login with popup rather than actual full redirect
-    - [ ] Different dropdown when not logged in
+    - [X] Different dropdown when not logged in
     - [X] Logout
   - [ ] DataVis Page
     - [ ] Is designed to disguise itself as the home page, for the appearance of a clean single page app
