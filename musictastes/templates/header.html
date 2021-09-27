@@ -9,7 +9,11 @@
 			<button><a href="{{ url_for('general_bp.index') }}">HOME</a></button>
 		</div>
 		<div id="user-info" class="col-md-2 vertical-center justify-content-end d-flex">
-			<button><a href="#"><i class="fas fa-user"></i></a></button>    <!-- This should have a dropdown of user info -->
+			<button type="button" class="btn dropdown-toggle" id="user-profile" data-toggle="dropdown"><i class="fas fa-user"></i></button>    <!-- This should have a dropdown of user info -->
+			<div class="dropdown-menu p-4 text-muted" aria-labelledby="user-profile" style="width: 500px;">
+				<img class="inline" src="https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png" alt="">
+				<p class="inline">username</p>
+			</div>
 		</div>
 	</div>
 </div>
