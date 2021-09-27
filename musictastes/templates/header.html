@@ -13,14 +13,18 @@
 			<div class="dropdown-menu p-4 text-muted" aria-labelledby="user-profile" style="width: 300px;">
 				<div class="container">
 					<div class="row">
-						<div class="col-6">
-							<div class="img-box" id="user-img">
+						<div class="col-4">
+							<div class="img-box">
 								<img src="{{ profile_pic }}" alt="">
 							</div>
 						</div>
 						<div class="col vertical-center">
 							{{ username }}
 						</div>
+					</div>
+					<div class="dropdown-divider"></div>
+					<div class="row dropdown-item text-muted" href="https://accounts.spotify.com/en/logout" id="logout">
+						Log Out
 					</div>
 				</div>
 			</div>

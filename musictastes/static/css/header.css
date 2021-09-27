@@ -20,3 +20,8 @@ button {
 #user-info > *, #logo > * {
     margin: 0px 15px;
 }
+
+#logout {
+  margin: 0px;
+  text-align: center;
+}
