@@ -1,5 +1,6 @@
 import spotipy
-from flask import render_template, redirect, url_for, request
+import os
+from flask import render_template, redirect, url_for, request, session
 
 from . import general_bp
 from musictastes import app, spotipy_helpers
@@ -50,3 +51,14 @@ def vis_page():
     # print(spotipy_helpers.fake_current_user(spotify))
 
     return render_template('vis.html', username=spotify.me()["display_name"], profile_pic=spotify.me()["images"][0]["url"])
+
+
+@general_bp.route('/logout/')
+def logout():
+    try:
+        # Remove the cache file, so a new user can authorise
+        os.remove(app.config['SPOTIFY_CACHE'])
+        session.clear()
+    except OSError as e:
+        print ("Error: %s - %s." % (e.filename, e.strerror))
+    return redirect(url_for('general_bp.index'))

@@ -22,7 +22,11 @@
 - [ ] Website Housekeeping
   - [ ] Home Page
   - [ ] Login Page
-    - [ ] Instead of an actual page, make it a drop down from the user icon in the header
+    - [ ] ~~Instead of an actual page, make it a drop down from the user icon in the header~~
+    - [X] User Profile dropdown
+    - [ ] Make OAuth login with popup rather than actual full redirect
+    - [ ] Different dropdown when not logged in
+    - [X] Logout
   - [ ] DataVis Page
     - [ ] Is designed to disguise itself as the home page, for the appearance of a clean single page app
 
