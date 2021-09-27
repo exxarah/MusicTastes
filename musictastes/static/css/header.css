@@ -20,7 +20,3 @@ button {
 #user-info > *, #logo > * {
     margin: 0px 15px;
 }
-
-img {
-  object-fit: contain;
-}

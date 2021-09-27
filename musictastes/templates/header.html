@@ -10,9 +10,19 @@
 		</div>
 		<div id="user-info" class="col-md-2 vertical-center justify-content-end d-flex">
 			<button type="button" class="btn dropdown-toggle" id="user-profile" data-toggle="dropdown"><i class="fas fa-user"></i></button>    <!-- This should have a dropdown of user info -->
-			<div class="dropdown-menu p-4 text-muted" aria-labelledby="user-profile" style="width: 500px;">
-				<img class="inline" src="https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png" alt="">
-				<p class="inline">username</p>
+			<div class="dropdown-menu p-4 text-muted" aria-labelledby="user-profile" style="width: 300px;">
+				<div class="container">
+					<div class="row">
+						<div class="col-6">
+							<div class="img-box" id="user-img">
+								<img src="{{ profile_pic }}" alt="">
+							</div>
+						</div>
+						<div class="col vertical-center">
+							{{ username }}
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>

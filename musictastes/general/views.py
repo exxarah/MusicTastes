@@ -49,4 +49,4 @@ def vis_page():
     # print(spotipy_helpers.get_current_user(spotify))
     # print(spotipy_helpers.fake_current_user(spotify))
 
-    return render_template('vis.html')
+    return render_template('vis.html', username=spotify.me()["display_name"], profile_pic=spotify.me()["images"][0]["url"])

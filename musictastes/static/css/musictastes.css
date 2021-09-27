@@ -54,3 +54,17 @@ i.selected {
 .inline {
   display: inline-block;
 }
+
+.img-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.img-box > img {
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
