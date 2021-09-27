@@ -2,14 +2,17 @@ import spotipy
 from flask import render_template, redirect, url_for, request
 
 from . import general_bp
-from musictastes import app
+from musictastes import app, spotipy_helpers
 
 
 @general_bp.route('/')
 def index():
     cache_handler = spotipy.cache_handler.CacheFileHandler(cache_path=app.config['SPOTIFY_CACHE'])
     auth_manager = spotipy.oauth2.SpotifyOAuth(
-        scope='user-read-recently-played',
+        scope=[
+            'user-read-recently-played',    # Last 50 songs
+            'user-library-read',            # Read Saved Tracks/Albums
+        ],
         cache_handler=cache_handler,
         show_dialog=True
     )
@@ -39,6 +42,11 @@ def vis_page():
         return redirect('/')
 
     spotify = spotipy.Spotify(auth_manager=auth_manager)
-    print(spotify.current_user_recently_played())
+    # print(spotipy_helpers.get_recently_played(spotify))
+    # print(spotipy_helpers.fake_recently_played(spotify))
+    # print(spotipy_helpers.get_saved_tracks(spotify))
+    # print(spotipy_helpers.fake_saved_tracks(spotify))
+    # print(spotipy_helpers.get_current_user(spotify))
+    # print(spotipy_helpers.fake_current_user(spotify))
 
     return render_template('vis.html')

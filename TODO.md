@@ -7,12 +7,12 @@
   - [ ] General Idea/Concept (ie, graph, pie chart)
   - [ ] Mockup Visualisation
   - [ ] General Website Design
-- [ ] Get Access to Data
+- [X] Get Access to Data
   - [X] Spotify OAuth
-  - [ ] Get User's listened to tracks
-    - [ ] Last 50
-    - [ ] Saved Songs
-    - [ ] User metadata?
+  - [X] Get User's listened to tracks
+    - [X] Last 50          https://developer.spotify.com/documentation/web-api/reference/#endpoint-get-the-users-currently-playing-track
+    - [X] Saved Songs      https://developer.spotify.com/documentation/web-api/reference/#endpoint-get-users-saved-tracks
+    - [X] User metadata?   https://developer.spotify.com/documentation/web-api/reference/#endpoint-get-current-users-profile
 - [ ] Organise Data
   - [ ] Group songs by common points (artists/metadata features/genre)
   - [ ] Maybe make a new "struct" to represent the song by their relation to the common points being used
