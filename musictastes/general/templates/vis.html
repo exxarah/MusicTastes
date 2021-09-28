@@ -12,31 +12,5 @@
 {% endblock %}
 
 {% block script %}
-<script type="text/javascript">
-
-	function openDrawer() {
-		const drawer = document.querySelector("#drawer");
-		console.log('opening')
-
-		drawer.style.width = "500px";
-	}
-
-	function closeDrawer() {
-		const drawer = document.querySelector("#drawer");
-		console.log("closing")
-
-		drawer.style.width = "0px"
-	}
-
-	window.addEventListener('mouseup',function(event){
-		const drawer = document.querySelector("#drawer");
-		console.log('mouseup')
-		if(event.target != drawer && event.target.parentNode != drawer){
-			 closeDrawer();
-		}
-	});
-
-	closeDrawer();
-
-</script>
+<script src="{{ url_for('static', filename='js/drawer.js') }}"></script>
 {% endblock %}
