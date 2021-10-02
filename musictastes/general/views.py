@@ -37,19 +37,7 @@ def index():
 
 @general_bp.route('/vis/')
 def vis_page():
-    cache_handler = spotipy.cache_handler.CacheFileHandler(cache_path=app.config['SPOTIFY_CACHE'])
-    auth_manager = spotipy.oauth2.SpotifyOAuth(cache_handler=cache_handler)
-    if not auth_manager.validate_token(cache_handler.get_cached_token()):
-        return redirect('/')
-
-    spotify = spotipy.Spotify(auth_manager=auth_manager)
-    # print(spotipy_helpers.get_recently_played(spotify))
-    # print(spotipy_helpers.fake_recently_played(spotify))
-    # print(spotipy_helpers.get_saved_tracks(spotify))
-    # print(spotipy_helpers.fake_saved_tracks(spotify))
-    # print(spotipy_helpers.get_current_user(spotify))
-    # print(spotipy_helpers.fake_current_user(spotify))
-
+    spotify = spotipy_helpers.get_spotify()
     return render_template('vis.html', logged_in=True, username=spotify.me()["display_name"], profile_pic=spotify.me()["images"][0]["url"])
 
 

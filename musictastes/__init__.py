@@ -21,9 +21,11 @@ def database_setup():
 
 def blueprints_setup():
     from musictastes.general import general_bp
+    from musictastes.api import api_bp
 
     # Blueprints Setup
     app.register_blueprint(general_bp, url_prefix='/')
+    app.register_blueprint(api_bp, url_prefix='/api/')
 
 
 def create_app(test_config=None):
