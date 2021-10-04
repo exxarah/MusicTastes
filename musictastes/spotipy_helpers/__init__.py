@@ -16,6 +16,7 @@ def get_spotify():
         scope=[
             'user-read-recently-played',    # Last 50 songs
             'user-library-read',            # Read Saved Tracks/Albums
+            'user-read-email',              # Get User Information
         ],
         cache_handler=cache_handler,
         show_dialog=True

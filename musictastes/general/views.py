@@ -16,6 +16,7 @@ def index():
         scope=[
             'user-read-recently-played',    # Last 50 songs
             'user-library-read',            # Read Saved Tracks/Albums
+            'user-read-email',              # Read User profile
         ],
         cache_handler=cache_handler,
         show_dialog=True
