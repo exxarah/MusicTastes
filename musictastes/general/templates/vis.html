@@ -6,12 +6,17 @@
 
 	{% for song in songs["items"] %}
 	<p>
-		<button type="button" id="menuButton" onclick="openDrawer();" data-track="{{ song["track"] }}">{{ song["track"]["name"] }}</button>
+		<button type="button" id="menuButton" onclick="openDrawer();" data-track="{{ song }}">{{ song["track"]["name"] }}</button>
 	</p>
 	{% endfor %}
 
 	<div id="drawer" tabindex="-1" aria-disabled="true">
-		Stuff in drawer
+		<h1 id="track-name">Name</h1>
+		<li id="track-artist">Artist</li>
+		<li id="track-album">Album</li>
+		<li id="track-date">Date Released</li>
+		<li ><a href="#" id="track-link">Listen now on Spotify</a></li>
+		<img id="track-image" src="#" alt="">
 	</div>
 {% endblock %}
 

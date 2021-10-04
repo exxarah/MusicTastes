@@ -5,7 +5,17 @@ function openDrawer() {
 
 function updateDrawer(clickedObj, drawerObj) {
 	if (clickedObj.tagName != 'BUTTON') { return; }
-	console.log(clickedObj.dataset.track);
+	var data = clickedObj.dataset.track;
+	data = data.replaceAll(' True,', ' true,').replaceAll(' False,', ' false,');
+	data = JSON5.parse(data);
+	console.log(JSON5.stringify(data));
+	console.log(data.track.name);
+	drawerObj.querySelector('#track-name').innerHTML = data.track.name;
+	drawerObj.querySelector('#track-artist').innerHTML = data.track.artists[0].name;
+	drawerObj.querySelector('#track-album').innerHTML = data.track.album.name;
+	drawerObj.querySelector('#track-date').innerHTML = data.track.album.release_date;
+	drawerObj.querySelector('#track-link').setAttribute('href', data.track.external_urls.spotify);
+	drawerObj.querySelector('#track-image').setAttribute('src', data.track.album.images[1].url);
 }
 
 function closeDrawer() {
