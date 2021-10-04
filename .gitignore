@@ -132,3 +132,6 @@ dmypy.json
 
 # Spotipy Cache
 .spotifyoauthcache
+
+# Secret Key stuff
+config_secret.py

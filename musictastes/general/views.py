@@ -10,6 +10,9 @@ from musictastes import app, spotipy_helpers
 def index():
     cache_handler = spotipy.cache_handler.CacheFileHandler(cache_path=app.config['SPOTIFY_CACHE'])
     auth_manager = spotipy.oauth2.SpotifyOAuth(
+        client_id=app.config['SPOTIFY_CLIENT_ID'],
+        client_secret = app.config['SPOTIFY_CLIENT_SECRET'],
+        redirect_uri = app.config['SPOTIFY_REDIRECT_URI'],
         scope=[
             'user-read-recently-played',    # Last 50 songs
             'user-library-read',            # Read Saved Tracks/Albums
