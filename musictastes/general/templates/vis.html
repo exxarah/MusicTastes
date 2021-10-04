@@ -4,7 +4,11 @@
 
 {% block content %}
 
-	<button type="button" id="menuButton" onclick="openDrawer();">Open Drawer</button>
+	{% for song in songs["items"] %}
+	<p>
+		<button type="button" id="menuButton" onclick="openDrawer();" data-track="{{ song["track"] }}">{{ song["track"]["name"] }}</button>
+	</p>
+	{% endfor %}
 
 	<div id="drawer" tabindex="-1" aria-disabled="true">
 		Stuff in drawer
@@ -13,4 +17,5 @@
 
 {% block script %}
 <script src="{{ url_for('static', filename='js/drawer.js') }}"></script>
+<script src="{{ url_for('static', filename='js/vis.js') }}" charset="utf-8"></script>
 {% endblock %}

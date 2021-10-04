@@ -38,7 +38,11 @@ def index():
 @general_bp.route('/vis/')
 def vis_page():
     spotify = spotipy_helpers.get_spotify()
-    return render_template('vis.html', logged_in=True, username=spotify.me()["display_name"], profile_pic=spotify.me()["images"][0]["url"])
+    return render_template(
+        'vis.html',
+        logged_in=True, username=spotify.me()["display_name"], profile_pic=spotify.me()["images"][0]["url"],
+        songs = spotipy_helpers.get_recently_played()
+    )
 
 
 @general_bp.route('/logout/')

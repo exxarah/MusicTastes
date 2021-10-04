@@ -1,4 +1,5 @@
 import os
+import json
 from flask import redirect
 
 from musictastes import app
@@ -17,7 +18,8 @@ def get_spotify():
 
 
 def get_recently_played(spotify=get_spotify()):
-    return spotify.current_user_recently_played()
+    data = spotify.current_user_recently_played()
+    return data
 
 
 def fake_recently_played():
