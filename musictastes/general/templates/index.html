@@ -4,6 +4,19 @@
 
 {% block content %}
 
-	<button><a href="{{ auth_url }}">Get Started!</a></button>
+	<div class="hero">
+		<h1>Welcome to Music<span class="green">Tastes</span></h1>
+	</div>
+
+	<div class="link">
+        <p><b>Want to know what time period you’ve been listening to? 
+            We can help you <span class="visua">visualise</span> it.</b>
+            By signing in with Spotify it allows us to take the last 
+            50 songs you have been listening to,mapping it on a timeline
+            which shows a timeline of how historic or how in with 
+            the mainstream flow of music your beats are.
+            </p>
+
+	<button><a class="btn-teal" href="{{ auth_url }}">Visualise</a></button>
 
 {% endblock %}

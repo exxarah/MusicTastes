@@ -80,3 +80,63 @@ i.selected {
     overflow-x: hidden; /* Disable horizontal scroll */
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
 }
+
+/*Homepage*/
+
+.hero{
+    background-color: #204E4A;
+    height: 400px;
+}
+
+.hero h1 {
+    color: whitesmoke;
+    padding: 100px;
+    margin: 0;
+    text-align: center;
+    font-size: 50px;
+    font-family: sans-serif;
+    font-weight: lighter;
+}
+
+.link {
+    height: 400px;
+    /* background-color: gray; */
+    text-align: center;
+    }
+
+.link p{
+margin: 0;
+padding: 40px;
+
+}
+
+.visua { /* changes the colour of the word visulaise*/
+    color: #204E4A;
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px #204E4A;
+    font-weight: lighter;
+}
+
+/* button */
+
+.btn-teal {
+    background-color: #204E4A;
+    border: 3px solid #193D3A;
+    border-radius: 20px;
+    color: #AEBFBE;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 3em;
+    padding: 0px 20px 5px 20px;
+    transition: background-color 0.5s;
+    transition: color 0.5s;
+  }
+  /* Hover button */
+  .btn-teal:hover {
+    color: #FFF;
+    background-color: #1DB954;
+    text-decoration: none;
+    transition: background-color 0.5s;
+    transition: color 0.5s;
+  }
