@@ -7,10 +7,10 @@ button {
 }
 
 #header {
-    background-color: lightgray;    /* E6 = 90% opacity */
+    background-color: black;    /* E6 = 90% opacity */
     height: 8vh;
     font-family: "Raleway", sans-serif;
-    color: slategray;
+    color: white;
 }
 
 #navbar * {
@@ -24,4 +24,8 @@ button {
 #logout {
   margin: 0px;
   text-align: center;
+}
+
+.green{
+    color: #1DB954; /*turns the word tastes to green*/
 }
