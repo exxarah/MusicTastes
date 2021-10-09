@@ -28,7 +28,9 @@ def get_spotify():
     return spotify
 
 
-def get_recently_played(spotify=get_spotify()):
+def get_recently_played(spotify=None):
+    if spotify is None:
+        spotify = get_spotify()
     data = spotify.current_user_recently_played()
     return data
 
@@ -44,7 +46,9 @@ def fake_recently_played():
     return result
 
 
-def get_saved_tracks(spotify=get_spotify()):
+def get_saved_tracks(spotify=None):
+    if spotify is None:
+        spotify = get_spotify()
     result = []
     offset = 0
     increment = 20
@@ -67,8 +71,11 @@ def fake_saved_tracks():
     return result
 
 
-def get_current_user(spotify=get_spotify()):
-    return spotify.current_user()
+def get_current_user(spotify=None):
+    if spotify is None:
+        spotify = get_spotify()
+    data = spotify.current_user()
+    return data
 
 
 def fake_current_user():
