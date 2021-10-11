@@ -19,7 +19,9 @@ button {
 
 #user-info > *, #logo > * {
     margin: 0px 15px;
+    
 }
+ 
 
 #logout {
   margin: 0px;
@@ -30,4 +32,6 @@ button {
     color: #1DB954; /*turns the word tastes to green*/
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     /*creates an outline around green text*/
+    margin: 0;
+   
 }

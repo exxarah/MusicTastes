@@ -107,7 +107,7 @@ i.selected {
 .link p{
 margin: 0;
 padding: 40px;
-
+color: black;
 }
 
 .visua { /* changes the colour of the word visulaise*/
@@ -131,7 +131,8 @@ padding: 40px;
     padding: 0px 20px 5px 20px;
     transition: background-color 0.5s;
     transition: color 0.5s;
-  }
+    
+}
   /* Hover button */
   .btn-teal:hover {
     color: #FFF;
@@ -140,3 +141,5 @@ padding: 40px;
     transition: background-color 0.5s;
     transition: color 0.5s;
   }
+
+ 
