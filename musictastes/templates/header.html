@@ -2,14 +2,17 @@
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/header.css') }}"/>
 <div class="container-fluid fixed-top">
 	<div id="header" class="row">
-		<div id="logo" class="col-12 col-md-2 vertical-center d-flex justify-content-center justify-content-md-start">
+		<!-- <div id="logo" class="col-12 col-md-2 vertical-center d-flex justify-content-center justify-content-md-start"> -->
+		<div id='logo' class="col-6">
 			<i class="fas fa-music"></i> Music<span class="green">Tastes</span>
 		</div>
-		<div id="navbar" class="col vertical-center d-flex">
+		<!-- <div id="navbar" class="col vertical-center d-flex">
 			<button><a href="{{ url_for('general_bp.index') }}">HOME</a></button>
-		</div>
+		</div> -->
 		{% if logged_in == True %}
-		<div id="user-info" class="col-md-2 vertical-center justify-content-end d-flex">
+		<!-- <div id="user-info" class="col-md-2 vertical-center justify-content-end d-flex"> -->
+		<div class="col-6">
+		   <div id="user-info">
 			<button type="button" class="btn dropdown-toggle" id="user-profile" data-toggle="dropdown"><i class="fas fa-user"></i></button>    <!-- This should have a dropdown of user info -->
 			<div class="dropdown-menu p-4 text-muted" aria-labelledby="user-profile" style="width: 300px;">
 				<div class="container">
@@ -29,6 +32,7 @@
 					</a>
 				</div>
 			</div>
+		   </div>
 		</div>
 		{% endif %}
 	</div>

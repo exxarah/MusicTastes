@@ -18,9 +18,21 @@ button {
     margin: 0px 15px;
 }
 
-#user-info > *, #logo > * {
-    margin: 0px 15px;
-    color:#1DB954;
+#logo{
+ padding: 10px; 
+ font-weight: bold;
+}
+
+#user-info  {
+    /* margin: 0px 15px; */
+    float: right;
+    width: 50px;
+    padding: 2px;
+    
+}
+
+#user-profile {
+    background-color: #1DB954;
     
 }
  
