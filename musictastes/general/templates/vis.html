@@ -5,7 +5,7 @@
 {% block content %}
 
 	{% for song in songs["items"] %}
-	<p>
+	<p style="background-color: #F00; width:{{song['track']['popularity']}}%">
 		<button type="button" id="menuButton" onclick="openDrawer();" data-track="{{ song }}">{{ song["track"]["name"] }}</button>
 	</p>
 	{% endfor %}

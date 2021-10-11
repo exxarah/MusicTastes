@@ -42,10 +42,13 @@ def index():
 @general_bp.route('/vis/')
 def vis_page():
     spotify = spotipy_helpers.get_spotify()
+    songs = spotipy_helpers.get_recently_played()
+    songs['items'] = sorted(songs['items'], key=lambda d: d['track']['album']['release_date'])
+
     return render_template(
         'vis.html',
         logged_in=True, username=spotify.me()["display_name"], profile_pic=spotify.me()["images"][0]["url"],
-        songs = spotipy_helpers.get_recently_played()
+        songs = songs
     )
 
 
