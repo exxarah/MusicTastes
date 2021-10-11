@@ -8,10 +8,10 @@ button {
 
 #header {
     background-color: black;    /* E6 = 90% opacity */
-    height: 10vh; 
+    height: 8vh; 
     font-family: "Raleway", sans-serif;
     color: white;
-    padding-top: 10px;
+    padding-top: 2px;
 }
 
 #navbar * {
