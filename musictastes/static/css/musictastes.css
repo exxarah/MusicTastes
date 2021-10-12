@@ -77,10 +77,14 @@ i.selected {
     z-index: 1; /* Stay on top */
     top: 0; /* Stay at the top */
     right: 0;
-    background-color: #EEEEEE; /* Black*/
+    background-color: black; /* Black*/
+    color: white;
     overflow-x: hidden; /* Disable horizontal scroll */
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+    
 }
+
+
 
 /*Homepage*/
 
