@@ -84,6 +84,20 @@ i.selected {
     
 }
 
+/*For the visualisation*/
+#bars {
+    padding: 10px;
+    margin: 2px;
+    border: dotted tomato;
+}
+
+#menuButton {
+    color: whitesmoke;
+    text-align: left;
+    
+}
+ 
+
 
 
 /*Homepage*/
@@ -151,5 +165,3 @@ color: black;
     transition: color 0.5s;
   }
   
-
- 
