@@ -85,10 +85,12 @@ i.selected {
 }
 
 /*For the visualisation*/
-#bars {
+.bar {
     padding: 10px;
-    margin: 2px;
+    margin: 0px;
     border: dotted tomato;
+    background-color: #193D3A;
+    width: 100%;
 }
 
 #menuButton {

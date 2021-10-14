@@ -1,3 +1,5 @@
+import json
+
 import spotipy
 import os
 from flask import render_template, redirect, url_for, request, session
@@ -44,11 +46,17 @@ def vis_page():
     spotify = spotipy_helpers.get_spotify()
     songs = spotipy_helpers.get_recently_played()
     songs['items'] = sorted(songs['items'], key=lambda d: d['track']['album']['release_date'])
+    songsJson = {}
+    for item in songs['items']:
+        songsJson[item["track"]["id"]] = json.JSONEncoder().encode(item)
 
     return render_template(
         'vis.html',
-        logged_in=True, username=spotify.me()["display_name"], profile_pic=spotify.me()["images"][0]["url"],
-        songs = songs
+        logged_in=True,
+        username=spotify.me()["display_name"],
+        profile_pic=spotify.me()["images"][0]["url"],
+        songs=songs,
+        songsJson=songsJson,
     )
 
 

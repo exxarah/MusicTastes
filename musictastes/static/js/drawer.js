@@ -6,7 +6,6 @@ function openDrawer() {
 function updateDrawer(clickedObj, drawerObj) {
 	if (clickedObj.tagName != 'BUTTON') { return; }
 	var data = clickedObj.dataset.track;
-	data = data.replaceAll(' True,', ' true,').replaceAll(' False,', ' false,').replaceAll(' None}', ' ""}');
 	console.log(data);
 	data = JSON5.parse(data);
 	console.log(JSON5.stringify(data));
