@@ -87,7 +87,6 @@ i.selected {
 /*For the visualisation*/
 .bar {
     margin: 0px;
-    border: dotted tomato;
     background-color: #193D3A;
     width: 100%;
 }
