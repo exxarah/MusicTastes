@@ -1,6 +1,9 @@
-function openDrawer() {
-	const drawer = document.querySelector("#drawer");
-	drawer.style.width = "500px";
+function openDrawer(obj) {
+	obj.setAttribute('data-width', obj.style.width);
+	obj.setAttribute("data-selected", true)
+	obj.style.width = '500px';
+	// const drawer = document.querySelector("#drawer");
+	// drawer.style.width = "500px";
 }
 
 function updateDrawer(clickedObj, drawerObj) {
@@ -16,8 +19,11 @@ function updateDrawer(clickedObj, drawerObj) {
 }
 
 function closeDrawer() {
-	const drawer = document.querySelector("#drawer");
-	drawer.style.width = "0px"
+	const obj = document.querySelector('[data-selected=true]')
+	obj.style.width = obj.dataset.width;
+	obj.removeAttribute('data-selected');
+	// const drawer = document.querySelector("#drawer");
+	// drawer.style.width = "0px"
 }
 
 window.addEventListener('mouseup',function(event){
