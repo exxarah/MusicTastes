@@ -6,10 +6,7 @@ function openDrawer() {
 function updateDrawer(clickedObj, drawerObj) {
 	if (clickedObj.tagName != 'BUTTON') { return; }
 	var data = clickedObj.dataset.track;
-	console.log(data);
 	data = JSON5.parse(data);
-	console.log(JSON5.stringify(data));
-	console.log(data.track.name);
 	drawerObj.querySelector('#track-name').innerHTML = data.track.name;
 	drawerObj.querySelector('#track-artist').innerHTML = data.track.artists[0].name;
 	drawerObj.querySelector('#track-album').innerHTML = data.track.album.name;
