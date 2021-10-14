@@ -15,6 +15,7 @@ function alignWidths(){
         data = JSON5.parse(data);
         let width = (data.track.popularity / allWidths) * totalWidth;
         currentValue.style.width = width.toString() + 'px';
+        currentValue.setAttribute('data-width', width.toString() + 'px');
     })
 }
 
@@ -43,3 +44,7 @@ window.onload = function() {
   alignWidths();
   setColours();
 };
+
+window.addEventListener('resize', function () {
+    alignWidths();
+})

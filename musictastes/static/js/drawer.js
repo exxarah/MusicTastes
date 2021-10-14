@@ -34,3 +34,7 @@ function closeDrawer() {
 window.addEventListener('mouseup',function(event){
 	closeDrawer();
 });
+
+window.addEventListener('resize', function () {
+    closeDrawer();
+})
