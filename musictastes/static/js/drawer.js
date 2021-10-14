@@ -2,12 +2,16 @@ function openDrawer(obj) {
 	obj.setAttribute('data-width', obj.style.width);
 	obj.setAttribute("data-selected", true)
 	obj.style.width = '500px';
+	updateDrawer(obj)
+	const drawerObj = document.querySelector("#drawer");
+	obj.innerHTML = drawerObj.innerHTML;
 	// const drawer = document.querySelector("#drawer");
 	// drawer.style.width = "500px";
 }
 
-function updateDrawer(clickedObj, drawerObj) {
+function updateDrawer(clickedObj) {
 	if (clickedObj.tagName != 'BUTTON') { return; }
+	const drawerObj = document.querySelector("#drawer");
 	var data = clickedObj.dataset.track;
 	data = JSON5.parse(data);
 	drawerObj.querySelector('#track-name').innerHTML = data.track.name;
@@ -22,17 +26,11 @@ function closeDrawer() {
 	const obj = document.querySelector('[data-selected=true]')
 	obj.style.width = obj.dataset.width;
 	obj.removeAttribute('data-selected');
+	obj.innerHTML = "";
 	// const drawer = document.querySelector("#drawer");
 	// drawer.style.width = "0px"
 }
 
 window.addEventListener('mouseup',function(event){
 	closeDrawer();
-});
-
-window.addEventListener('click', function(event) {
-	const drawer = document.querySelector("#drawer");
-	const button = event.target;
-
-	updateDrawer(button, drawer)
 });
