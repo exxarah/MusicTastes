@@ -27,10 +27,7 @@ function closeDrawer() {
 }
 
 window.addEventListener('mouseup',function(event){
-	const drawer = document.querySelector("#drawer");
-	if(event.target != drawer && event.target.parentNode != drawer){
-		 closeDrawer();
-	}
+	closeDrawer();
 });
 
 window.addEventListener('click', function(event) {
