@@ -30,6 +30,7 @@ i.selected {
 .vertical-center {
     margin-top: auto;
     margin-bottom: auto;
+    color: black;
 }
 
 #content, #drawer {
