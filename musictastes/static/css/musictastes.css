@@ -109,6 +109,12 @@ i.selected {
     height: 400px;
 }
 
+/* .hero-image { this should back a background image?
+    background-image: url(/musictastes/static/hero.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 400px;
+} */
 
 .hero h1 {
     color: whitesmoke;
