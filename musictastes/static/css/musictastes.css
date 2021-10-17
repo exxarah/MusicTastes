@@ -104,9 +104,10 @@ i.selected {
 
 .hero{
     background-color: #204E4A;
-    background-image: none; /*add in a background image*/
+    background-image:none ; /*add in a background image*/
     height: 400px;
 }
+
 
 .hero h1 {
     color: whitesmoke;
@@ -164,4 +165,27 @@ color: black;
     transition: background-color 0.5s;
     transition: color 0.5s;
   }
+
+  /*This changes the colour of text in the drawer based
+   on the background colour so that it is legible*/
+
+  #track-name{
+      mix-blend-mode: difference;
+  }
+
+  #track-artist {
+      mix-blend-mode: difference;
+  }
+
+
+  #track-album{
+    mix-blend-mode: difference;
+  }
   
+  #track-date {
+    mix-blend-mode: difference;
+  }
+
+  #track-link {
+      mix-blend-mode: difference;
+  }
