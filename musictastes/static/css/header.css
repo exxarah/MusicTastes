@@ -21,7 +21,16 @@ button {
 #logo{
  padding: 10px; 
  font-weight: bold;
+
+
 }
+
+#logo *{
+    vertical-align: middle;
+  
+}
+
+
 
 #user-info  {
     /* margin: 0px 15px; */
