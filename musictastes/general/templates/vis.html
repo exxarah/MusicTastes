@@ -11,11 +11,11 @@
 
 	<div id="vis-box" style="display: flex; height: inherit">
 	{% for song in songs["items"] %}
-		<button class="bar" type="button" id="menuButton" onclick="openDrawer(this);" data-track="{{ songsJson[song["track"]["id"]] }}"></button>
+		<button class="bar" type="button" id="menuButton" onmouseout="closeDrawer()" onmouseover="openDrawer(this);" data-track="{{ songsJson[song["track"]["id"]] }}"></button>
 	{% endfor %}
 	</div>
 
-	<div id="drawer" tabindex="-1" aria-disabled="true">
+	<div id="drawer"  tabindex="-1" aria-disabled="true">
 		<img id="track-image" src="#" alt="">
 		<h1 id="track-name">Name</h1>
 		<li id="track-artist">Artist</li>
