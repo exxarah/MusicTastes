@@ -31,7 +31,7 @@ function closeDrawer() {
 	// drawer.style.width = "0px"
 }
 
-window.addEventListener('onmouseout',function(event){
+window.addEventListener('onmouseleave',function(event){
 	closeDrawer();
 });
 

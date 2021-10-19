@@ -11,7 +11,7 @@
 
 	<div id="vis-box" style="display: flex; height: inherit">
 	{% for song in songs["items"] %}
-		<button class="bar" type="button" id="menuButton" onmouseout="closeDrawer()" onmouseover="openDrawer(this);" data-track="{{ songsJson[song["track"]["id"]] }}"></button>
+		<button class="bar" type="button" id="menuButton" onmouseleave="closeDrawer()" onmouseenter="openDrawer(this);" data-track="{{ songsJson[song["track"]["id"]] }}"></button>
 	{% endfor %}
 	</div>
 
