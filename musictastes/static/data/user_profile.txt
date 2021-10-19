@@ -1,21 +1,21 @@
 {
-  'display_name': 'aphraelnyx',
-  'external_urls': {
-    'spotify': 'https://open.spotify.com/user/aphraelnyx'
+  "display_name": "aphraelnyx",
+  "external_urls": {
+    "spotify": "https://open.spotify.com/user/aphraelnyx"
   },
-  'followers': {
-    'href': None,
-    'total': 0
+  "followers": {
+    "href": null,
+    "total": 0
   },
-  'href': 'https://api.spotify.com/v1/users/aphraelnyx',
-  'id': 'aphraelnyx',
-  'images': [
+  "href": "https://api.spotify.com/v1/users/aphraelnyx",
+  "id": "aphraelnyx",
+  "images": [
     {
-      'height': None,
-      'url': 'https://i.scdn.co/image/ab6775700000ee8597f64cb6d8b17a056b7b6226',
-      'width': None
+      "height": null,
+      "url": "https://i.scdn.co/image/ab6775700000ee8597f64cb6d8b17a056b7b6226",
+      "width": null
     }
   ],
-  'type': 'user',
-  'uri': 'spotify:user:aphraelnyx'
+  "type": "user",
+  "uri": "spotify:user:aphraelnyx"
 }
