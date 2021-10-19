@@ -42,7 +42,7 @@ def fake_recently_played():
             'r',
             encoding='utf-8'
     ) as f:
-        result = f.read()
+        result = json.load(f)
     return result
 
 
@@ -85,5 +85,5 @@ def fake_current_user():
             'r',
             encoding='utf-8'
     ) as f:
-        result = f.read()
+        result = json.load(f)
     return result
