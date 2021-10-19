@@ -10,6 +10,9 @@ from musictastes import app, spotipy_helpers
 
 @general_bp.route('/')
 def index():
+    return render_template('index.html', auth_url=url_for('general_bp.vis_page'))
+'''
+def index():
     cache_handler = spotipy.cache_handler.CacheFileHandler(cache_path=app.config['SPOTIFY_CACHE'])
     auth_manager = spotipy.oauth2.SpotifyOAuth(
         client_id=app.config['SPOTIFY_CLIENT_ID'],
@@ -39,12 +42,13 @@ def index():
     print(f'Hi {spotify.me()["display_name"]}')
 
     return redirect(url_for('general_bp.vis_page'))
-
+'''
 
 @general_bp.route('/vis/')
 def vis_page():
-    spotify = spotipy_helpers.get_spotify()
-    songs = spotipy_helpers.get_recently_played()
+    # spotify = spotipy_helpers.get_spotify()
+    # songs = spotipy_helpers.get_recently_played()
+    songs = spotipy_helpers.fake_recently_played()
     songs['items'] = sorted(songs['items'], key=lambda d: d['track']['album']['release_date'])
     songsJson = {}
     for item in songs['items']:
@@ -53,8 +57,8 @@ def vis_page():
     return render_template(
         'vis.html',
         logged_in=True,
-        username=spotify.me()["display_name"],
-        profile_pic=spotify.me()["images"][0]["url"],
+        username=spotipy_helpers.fake_current_user()["display_name"],
+        profile_pic=spotipy_helpers.fake_current_user()["images"][0]["url"],
         songs=songs,
         songsJson=songsJson,
     )
@@ -67,5 +71,5 @@ def logout():
         os.remove(app.config['SPOTIFY_CACHE'])
         session.clear()
     except OSError as e:
-        print ("Error: %s - %s." % (e.filename, e.strerror))
+        print("Error: %s - %s." % (e.filename, e.strerror))
     return redirect(url_for('general_bp.index'))
